@@ -1,12 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,Modal } from 'react-native';
+import WebView from "react-native-webview";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   
+    <Modal animationType="slide" transparent={false} visible={true}>
+    <WebView
+      source={{ uri: "https://liqi.com.br" }}
+      //Enable Javascript support
+      javaScriptEnabled={true}
+      //For the Cache
+      domStorageEnabled={true}
+      originWhitelist={["*"]}
+    />
+  </Modal>
+
   );
 }
 
